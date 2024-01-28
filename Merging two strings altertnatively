@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+
+class Solution {
+public:
+    std::string mergeAlternately(std::string word1, std::string word2) {
+        std::string merged;  // Declare 'merged' within the function scope
+        int lm = std::max(word1.size(), word2.size());
+
+        // Iterate up to the maximum length
+        for (int i = 0; i < lm; i++) {
+            // Check if the index is within bounds before appending characters
+            if (i < word1.size()) {
+                merged += word1[i];
+            }
+            if (i < word2.size()) {
+                merged += word2[i];
+            }
+        }
+
+        return merged;
+    }
+};
